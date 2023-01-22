@@ -33,8 +33,8 @@ def oraqul_answer(boxes, words, question):
     start_scores = outputs.start_logits
     end_scores = outputs.end_logits
     start, end = word_ids[tf.math.argmax(start_scores, -1)[0]], word_ids[tf.math.argmax(end_scores, -1)[0]]
-    answer = words[start : end + 1][0:2] #" ".join(words[start : end + 1])
-    answer = " ".join([x for x in answer if not x.isalpha()])
+    answer = " ".join(words[start : end + 1][0:2]) #" ".join(words[start : end + 1])
+    #answer = " ".join([x for x in answer if not x.isalpha()])
   
     return answer
 
